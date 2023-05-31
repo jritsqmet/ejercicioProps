@@ -21,16 +21,13 @@ export default function Card(prop) {
             <Modal
                 visible={modalVisble}
                 animationType="fade"
-                transparent={true}
-                
+                transparent={true}        
             >
-                <View style={styles.modal}>
-                    <TouchableOpacity onPress={ ()=> llamar(234) }>
+                <View style={styles.modal} >
+                    <TouchableOpacity onPress={ ()=> llamar(prop.datos.phone) }>
                        
-                        <Text> {prop.datos.phone} </Text>
+                        <Text>Llamar:  {prop.datos.phone} </Text>
                     </TouchableOpacity>
-
- 
                     <Button onPress={ ()=> setmodalVisble(false)} title='cerrar'/>
                 </View>
 
@@ -46,6 +43,10 @@ const styles = StyleSheet.create({
     },
     modal:{
         flex:1,
-        backgroundColor:'skyblue'
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        alignItems: 'center',
+        justifyContent: 'center',
+
+
     }
 });
